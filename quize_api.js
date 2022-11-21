@@ -128,14 +128,14 @@ function select_any(){
 function loadquestion(){
 question.innerHTML  = questions[currentquestion].question;
 number.innerHTML = `Question ${currentquestion+1} of ${questions.length}`;
-a.innerHTML = 'A.' + questions[currentquestion].option.a;
-input_a.value = 'A.' + questions[currentquestion].option.a;
-b.innerHTML = 'B.' + questions[currentquestion].option.b;
-input_b.value = 'B.' + questions[currentquestion].option.b;
-c.innerHTML = 'C.' + questions[currentquestion].option.c;
-input_c.value = 'C.' + questions[currentquestion].option.c;
-d.innerHTML = 'D.' + questions[currentquestion].option.d;
-input_d.value = 'D.' + questions[currentquestion].option.d;
+a.innerHTML = 'A. ' + questions[currentquestion].option.a;
+input_a.value = 'A. ' + questions[currentquestion].option.a;
+b.innerHTML = 'B. ' + questions[currentquestion].option.b;
+input_b.value = 'B. ' + questions[currentquestion].option.b;
+c.innerHTML = 'C. ' + questions[currentquestion].option.c;
+input_c.value = 'C. ' + questions[currentquestion].option.c;
+d.innerHTML = 'D. ' + questions[currentquestion].option.d;
+input_d.value = 'D. ' + questions[currentquestion].option.d;
 //this api repeats option d in option e
 // e.innerHTML = questions[currentquestion].option.e;
 // input_e.value = questions[currentquestion].option.e;
