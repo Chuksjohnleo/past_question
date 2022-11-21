@@ -114,7 +114,7 @@ label{
 span{
     background-color: blue;
     color: aqua;
-    margin: 1px;
+    margin: 15px;
 }
 article{
     background-color: blue;
@@ -179,7 +179,7 @@ button:hover{
     box-shadow: 10px 30px 40px yellow inset,-10px -30px 40px red inset;
 }
 hr{
-    width: 90vw;
+    width: 300px;
 }
 footer{
     position: sticky;
