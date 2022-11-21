@@ -30,6 +30,7 @@ subjects.forEach(subject=>{
     current_subject = subject.value;
     starter.style.display = 'inline';
     subject.style.background = 'blue';
+    subject.style.color = 'white';
    });
 });
 

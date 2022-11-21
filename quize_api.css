@@ -28,6 +28,9 @@ nav{
 nav button{
     font-size:large;
 }
+.instructions{
+    font-size: 1.8rem;
+}
 main{
     display: none;
     flex-direction: column;
@@ -157,6 +160,12 @@ article{
     border-radius: 5px;
     margin: auto 25px;
 }
+button{
+    font-size: 2rem;
+}
+button:hover{
+    background-color: red;
+}
 .tele_link{
     display: flex;
     flex-direction: column;
@@ -181,4 +190,9 @@ footer{
     align-items: center;
     color: white;
     background: rgb(29, 28, 27);
+}
+#start{
+    margin: 15px;
+    background-color: blueviolet;
+    color: white;
 }
