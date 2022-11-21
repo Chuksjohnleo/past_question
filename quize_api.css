@@ -1,0 +1,184 @@
+body{
+    background-color: rgb(128, 128, 170);
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    gap: 150px;
+}
+@media screen and (min-width:981px){
+    body{
+        gap: 2px;
+    }
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: beige;
+    color: blue;
+    height: 100px;
+    cursor: pointer;
+    font-size: xx-large;
+    box-shadow: 3px 4px 5px inset,3px -4px 5px inset;
+}
+#counter{
+    font-size: xx-large;
+}
+nav button{
+    font-size:large;
+}
+main{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: aqua;
+    border-radius: 30px;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+@media screen and (max-width:250) {
+    main{
+        overflow: scroll;
+    }
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    justify-content: center;
+    gap: 50px;
+}
+#checkbox_container{
+    display: grid;
+    margin:2px 40px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+#question{
+    color: blue;
+    background-color: rgb(234, 229, 240);
+    text-align: center;
+    font-size: 1.6rem;
+}
+#number{
+    color: red;
+    background-color: rgb(98, 0, 255);
+    text-align: center;
+}
+.option{
+    font-size: 2rem;
+    color: rgb(253, 251, 253);
+    background-color: rgb(9, 247, 108);
+    border: 3px solid blue;
+}
+.guide{
+    text-align: center;
+    background-color: aquamarine;
+    margin: 2em;
+    padding: 2em;
+    border: 1px solid turquoise;
+    border-radius: 30px;
+    box-shadow: 20px 20px 40px yellow inset;
+    color: blue;
+}
+#nav-btns{
+    display: flex;
+    justify-content: space-between;
+    background-color: blue;
+    margin: 1.2em;
+}
+#submitter{
+    width: 60px;
+    background-color: blue;
+    color: white;
+    border-radius: 2px;
+}
+#next{
+    width: 100px;
+    background-color: yellow;
+    height: 40px;
+}
+label{
+    min-width: 200px;
+    display: inline-block;
+}
+#back{
+    width: 100px;
+    background-color: red;
+}
+.option:hover{
+    background: red;
+}
+span{
+    background-color: blue;
+    color: aqua;
+    margin: 1px;
+}
+article{
+    background-color: blue;
+    padding: 50px;
+    font-size: larger;
+    color: aqua;
+    width: 60vw;
+}
+.correct_answer{
+    color: white;
+}
+.choosen{
+    color: yellow;
+}
+.result_btns{
+    background-color: aqua;
+    color:blue;
+    border: 2px solid yellow;
+}
+.hr1{
+    width: 100px;
+    
+}
+.reduce_gap{
+    gap: 2px;
+}
+.wrong{
+    color: red;
+    font-size: 1.5em;
+}
+.correct{
+    color: rgb(250, 8, 230);
+    font-size: 1.5em;
+}
+.reduce_btn{
+    background-color: blue;
+    color: white;
+    margin: 1.3em;
+}
+.tele{
+    background-color: rgb(6, 157, 245);
+    border-radius: 5px;
+    margin: auto 25px;
+}
+.tele_link{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 150px;
+    text-align: center;
+    background-color: aquamarine;
+    margin: 2em;
+    font-size: 3rem;
+    border-radius: 30px;
+    box-shadow: 10px 30px 40px yellow inset,-10px -30px 40px red inset;
+}
+hr{
+    width: 90vw;
+}
+footer{
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: rgb(29, 28, 27);
+}

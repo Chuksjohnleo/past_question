@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="quize_api.css">
+        <title>Page Title</title>
+    </head>
+<body>
+    <nav id="nav">
+          <div>Subjects</div>
+          <div class="subject"><button value="mathematics">Mathematics</button></div>
+          <div class="subject"><button value="english">English</button></div>
+          <div class="subject"><button value="physics">Physics</button></div>
+    </nav>
+        <div class="guide" >
+            <h1>Answer all</h1>
+            <div><em>Instructions:</em>Click SUBMIT only when you are done answering all the questions</div>
+            <div id="counter"></div>
+            <div><button onclick="start()" id="start" >START!</button></div>
+      
+        </div>
+<main id="main" >
+    <div><button class="reduce_btn" onclick="reduce_screensize()" >Adjust screen size</button></div>
+     <div id="checkbox_container" ><!--<span>1<input type="radio" name="q" value="0"></span> <span> 2<input  type="radio" name="q" value="1"></span> <span> 3<input  type="radio" name="q" value="2"></span> <span>4<input  type="radio" name="q" value="3"></span>  --></div>
+    <!-- the commented code above is not a good practice. Go to the script to see how it should be done for obvious reasons -->
+    <div id="container" class="container" >
+        <div id="number"></div>
+        <div id="question"></div>
+        
+        <div class="option a" >
+            <input type="radio" id="input_a" name="s">
+            <label id="a" for="input_a"></label>
+        </div>
+        <div class="option a" >
+            <input type="radio" id="input_b" name="s">
+            <label id="b" for="input_b"></label>
+        </div>
+        <div class="option a" >
+            <input type="radio" id="input_c" name="s">
+            <label id="c" for="input_c"></label>
+        </div>
+        <div class="option a">
+            <input type="radio" id="input_d" name="s">
+            <label id="d" for="input_d"></label>
+        </div>
+        <!-- <div class="option a">
+            <input type="radio" id="input_e" name="s">
+            <label id="e" for="input_e"></label>
+        </div> this api repeats option d in option e--> 
+        <div id="nav-btns" >
+            
+            <button id="back">←Previous</button>
+            <button id="submitter">submit</button>
+            <button id="next">next→</button>
+            
+        </div>
+    </div>
+</main><hr>
+<p class="tele_link">
+    <span class="tele"><a href="https://t.me/LeCdeK" >MariapDevs</a></span>
+</p>
+<footer>
+   <p>All rights are reserved(c)</p>
+   <p>Website by mariadevs</p>
+   <p>Thanks to ALOC for making their hardwork</p>
+</footer>
+
+        <script src="quize_api.js" ></script>
+    </body>
+</html>
