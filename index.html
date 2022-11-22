@@ -6,24 +6,41 @@
     </head>
 <body>
     <nav id="nav">
-          <div>Subjects</div>
           <div class="subject"><button value="mathematics">Mathematics</button></div>
           <div class="subject"><button value="english">English</button></div>
-          <div class="subject"><button value="physics">Physics</button></div>
+          <div class="subject others">
+            <strong id="other_subjects_btn" >Other Subjects ▼</strong>
+            <div id="other_subjects" class="other_subjects" >
+                <div><button value="physics">Physics</button></div>
+                <div><button value="chemistry">Chemistry</button></div>
+                <div><button value="biology">Biology</button></div>
+                <div><button value="economics">Economics</button></div>
+                <!-- <div><button value="literature">Literature-In-English</button></div> -->
+                <div><button value="christian religious knowledge">CRS</button></div>
+                <div><button value="accounting">Accounting</button></div>
+                <div><button value="government">Government</button></div>
+                <div><button value="geography">Geography</button></div>
+                <div><button value="history">History</button></div>
+            </div>
+          </div>
+
     </nav>
+    <article class="welcome_article">
+       <h1> Welcome MariaDevs Past questions and answer platform</h1>
+       <p>Choose a subject and click <strong class="instruction_start">"START"</strong> to continue. You can message from <a href="https://t.me/LeCdeK">here</a> for suggestions and reviews</p> 
+    </article>
         <div class="guide" >
             <h1>Answer all</h1>
             <div class="instructions" ><em>Instructions:</em>Click SUBMIT only when you are done answering all the questions</div>
             <div id="counter"></div>
             <div><button onclick="start()" id="start" >START!</button></div>
-      
         </div>
 <main id="main" >
-    <div><button class="reduce_btn" onclick="reduce_screensize()" >Adjust screen size</button></div>
-     <div id="checkbox_container" ><!--<span>1<input type="radio" name="q" value="0"></span> <span> 2<input  type="radio" name="q" value="1"></span> <span> 3<input  type="radio" name="q" value="2"></span> <span>4<input  type="radio" name="q" value="3"></span>  --></div>
-    <!-- the commented code above is not a good practice. Go to the script to see how it should be done for obvious reasons -->
+    <div id="reducer"><button class="reduce_btn" onclick="reduce_screensize()" >Adjust screen size</button></div>
+    <em id="loading"></em>
     <div id="container" class="container" >
         <div id="number"></div>
+        <div id="section"></div>
         <div id="question"></div>
         
         <div class="option a" >
@@ -54,9 +71,12 @@
             
         </div>
     </div>
+    <div id="checkbox_container" ><!--<span>1<input type="radio" name="q" value="0"></span> <span> 2<input  type="radio" name="q" value="1"></span> <span> 3<input  type="radio" name="q" value="2"></span> <span>4<input  type="radio" name="q" value="3"></span>  --></div>
+    <!-- the commented code above is not a good practice. Go to the script to see how it should be done for obvious reasons -->
+   
 </main><hr>
 <p class="tele_link">
-    <span class="tele"><a href="https://t.me/LeCdeK" >MariapDevs</a></span>
+    <span class="tele"><a href="https://t.me/LeCdeK" >MariaDevs</a></span>
 </p>
 <footer>
    <p>All rights are reserved(c)</p>

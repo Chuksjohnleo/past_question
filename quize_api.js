@@ -19,6 +19,13 @@ const main = document.getElementById('main');
 const nav = document.getElementById('nav');
 const starter = document.getElementById('start');
 const counter = document.getElementById('counter');
+const section = document.getElementById('section');
+const other_subjects_btn = document.getElementById('other_subjects_btn');
+const other_subjects = document.getElementById('other_subjects');
+
+other_subjects_btn.addEventListener('click',()=>{
+    other_subjects.classList.toggle('flex');
+});
 starter.style.display = 'none';
 let count = 0;
 
@@ -31,6 +38,7 @@ subjects.forEach(subject=>{
     starter.style.display = 'inline';
     subject.style.background = 'blue';
     subject.style.color = 'white';
+    nav.innerHTML = `${subject.value.toUpperCase()}`
    });
 });
 
@@ -39,47 +47,12 @@ function reduce_screensize(){
     container.classList.toggle('reduce_gap');
 }
 
-let questions = [
-{   number: 1,
-    question : "what is js?",
-    a: "javascript",
-    b:"javas",
-    c:"javaside",
-    d: "joe sec",
-    choosen: 'none',
-    answer: "javascript"
-},
-{   number: 2,
-    question : "what is node?",
-    a: "javascript backend",
-    b:"serverside javascript",
-    c:"javaside bugs",
-    d: "hmm confusing",
-    choosen: 'none',
-    answer: "serverside javascript"
-},
-{   number: 3,
-    question : "what is sql?",
-    a: "javascript db",
-    b:"relational db",
-    c:"javaside db",
-    d: "msec",
-    choosen: 'none',
-    answer:"relational db"
-},
-{   number: 4,
-    question : "what is mongodb?",
-    a: "script db",
-    b:"relational db",
-    c:"javaside db",
-    d: "non-relational db",
-    choosen: 'none',
-    answer:"non-relational db"
-}
-]
+let questions = [];
 
 async function fetcher(){
-   await fetch(`https://questions.aloc.com.ng/api/v2/q/40?subject=${current_subject}`, { 
+    container.style.display = 'none';
+    loading.textContent = 'Loading...';
+    fetch(`https://questions.aloc.com.ng/api/v2/q/40?subject=${current_subject}`, { 
         headers: {
          'Accept': 'application/json',
          'Content-Type': 'application/json', 
@@ -87,8 +60,12 @@ async function fetcher(){
         }, 
         method: "GET", 
       }).then((res)=>{return res.json() }).then(resp=>{
+        if(resp){
+            container.style.display = '';
+            loading.textContent = '';
+        }
         questions = resp.data;
-        console.log(questions)
+        
         questions.forEach(question=>{
             question.choosen = '';
             question.result = '';
@@ -126,6 +103,7 @@ function select_any(){
 
 
 function loadquestion(){
+section.innerHTML = questions[currentquestion].section;
 question.innerHTML  = questions[currentquestion].question;
 number.innerHTML = `Question ${currentquestion+1} of ${questions.length}`;
 a.innerHTML = 'A. ' + questions[currentquestion].option.a;
@@ -218,15 +196,19 @@ const submit = ()=>{
         if(question.choosen === question.answer ){
             correct++;
             question.result = 'correct';
-            console.log(correct,question.result);
         }else{question.result ='wrong'}
-        console.log(question.result)
+        
     });
-container.innerHTML = `<div class='result' >
-    You got ${correct} questions out of ${questions.length} correct!
-    <button class='result_btns' onclick='restart()'>start another quiz</button>
-    <button class='result_btns' id='corrections' onclick='corrections()'>view corrections</button>
-    </div>`;
+document.getElementById('reducer').remove()
+container.innerHTML = 
+`<div class='result' >
+       <span class='score'>You got ${correct} questions out of ${questions.length} correct!</span>
+    <p>
+       <button class='result_btns' onclick='restart()'>start another quiz</button>
+       <button class='result_btns' id='corrections' onclick='corrections()'>view corrections</button>
+    </p>
+ </div>
+ `;
 }
 
 submitter.addEventListener("click",submit);

@@ -1,9 +1,9 @@
 body{
-    background-color: white;
+    background-color: rgb(230, 228, 228);
     display: flex;
     flex-direction: column;
     margin: 0px;
-    gap: 150px;
+    gap: 14px;
 }
 @media screen and (min-width:981px){
     body{
@@ -21,10 +21,29 @@ nav{
     cursor: pointer;
     font-size: xx-large;
     box-shadow: 3px 4px 5px inset,3px -4px 5px inset;
+    /* position: sticky;
+    top: 0px; */
 }
 #counter{
     font-size: xx-large;
 }
+.other_subjects{
+    display: none;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    padding: 20px;
+    background-color: beige;
+    z-index: 2;
+    box-shadow: -3px 3px 3px inset black,3px 3px 3px inset black;
+}
+.flex{
+    display: flex;
+}
+
+
 nav button{
     font-size:xx-large;
 }
@@ -55,7 +74,7 @@ main{
 #checkbox_container{
     display: grid;
     margin:2px 40px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr  1fr ;
 }
 #question{
     color: blue;
@@ -116,9 +135,11 @@ span{
     background-color: blue;
     color: aqua;
     margin: 15px;
-    font-size: 4rem;
+    font-size: 1.5rem;
 }
-
+#section{
+    font-size: 1.3rem;
+}
 article{
     background-color: blue;
     padding: 50px;
@@ -158,7 +179,6 @@ article{
     margin: 1.3em;
 }
 .tele{
-    background-color: rgb(6, 157, 245);
     border-radius: 5px;
     margin: auto 25px;
 }
@@ -173,16 +193,18 @@ button:hover{
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    height: 150px;
+    height: 450px;
     text-align: center;
     background-color: aquamarine;
     margin: 2em;
     font-size: 3rem;
+    padding: 40px;
     border-radius: 30px;
+    
     box-shadow: 10px 30px 40px yellow inset,-10px -30px 40px red inset;
 }
-hr{
-    width: 300px;
+.instruction_start{
+    color: rgb(252, 248, 248);
 }
 footer{
     position: sticky;
@@ -192,9 +214,30 @@ footer{
     align-items: center;
     color: white;
     background: rgb(29, 28, 27);
+    height: 1000px;
 }
 #start{
     margin: 15px;
     background-color: blueviolet;
+    color: white;
+}
+#loading{
+    text-align: center;
+    font-size: xx-large;
+    color: blue;
+}
+.score{
+    font-size: x-large;
+}
+.welcome_article{
+    display: flex;
+    align-self:center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+.welcome_article a{
     color: white;
 }
