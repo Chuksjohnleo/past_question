@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(128, 128, 170);
+    background-color: white;
     display: flex;
     flex-direction: column;
     margin: 0px;
@@ -26,7 +26,7 @@ nav{
     font-size: xx-large;
 }
 nav button{
-    font-size:large;
+    font-size:xx-large;
 }
 .instructions{
     font-size: 1.8rem;
@@ -35,7 +35,7 @@ main{
     display: none;
     flex-direction: column;
     align-items: center;
-    background-color: aqua;
+    background-color: rgb(221, 241, 241);
     border-radius: 30px;
     justify-content: center;
     margin-bottom: 100px;
@@ -67,10 +67,11 @@ main{
     color: red;
     background-color: rgb(98, 0, 255);
     text-align: center;
+    font-size: 4rem;
 }
 .option{
     font-size: 2rem;
-    color: rgb(253, 251, 253);
+    color: rgb(7, 11, 253);
     background-color: rgb(9, 247, 108);
     border: 3px solid blue;
 }
@@ -115,7 +116,9 @@ span{
     background-color: blue;
     color: aqua;
     margin: 15px;
+    font-size: 4rem;
 }
+
 article{
     background-color: blue;
     padding: 50px;
