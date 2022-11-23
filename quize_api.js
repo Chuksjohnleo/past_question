@@ -48,6 +48,8 @@ function reduce_screensize(){
 }
 
 let questions = [];
+let timeout = '';
+let interval = '';
 
 function fetcher(){
     container.style.display = 'none';
@@ -74,11 +76,13 @@ function fetcher(){
          select_any();
          const checkboxes = checkbox_container.querySelectorAll('input');
          checkboxes[currentquestion].checked = true;
-        //  setTimeout(submit,2400000);
-        //  setInterval(()=>{
-        //     count++;
-        //     counter.innerHTML = count + ' minutes spent';
-        //  }, 60000)
+    
+       interval = setInterval(()=>{
+            count++;
+            counter.innerHTML = count + ' minutes spent';
+            
+         }, 60000)
+        timeout = setTimeout(submit,2400000);
          checkboxes.forEach(checkbox=>{
             checkbox.addEventListener('click',()=>{
                   uncheck_radio();
@@ -126,6 +130,9 @@ inputs.forEach(input=>{
     input.addEventListener('click',()=>{
         console.log(input.value[0])
         questions[currentquestion].choosen = input.value[0].toLowerCase() ;
+        //indicate answered questions
+        const sp = checkbox_container.querySelectorAll('span');
+        sp[currentquestion].style.background = 'blue';    
     })
 })
 function tester(){
@@ -172,8 +179,8 @@ next.addEventListener('click',()=>{
         loadquestion();
      }
     tester();
-    const checkboxes = checkbox_container.querySelectorAll('input')
-    checkboxes[currentquestion].checked = true
+    const checkboxes = checkbox_container.querySelectorAll('input');
+    checkboxes[currentquestion].checked = true;
 });
 
 
@@ -190,6 +197,10 @@ back.addEventListener('click',()=>{
 });
 
 const submit = ()=>{
+    console.log(timeout,interval)
+    clearTimeout(timeout);
+    clearInterval(interval);
+    console.log(timeout,interval)
     checkbox_container.remove();
     questions.forEach(question=>{
         

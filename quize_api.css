@@ -132,10 +132,13 @@ label{
     background: red;
 }
 span{
-    background-color: blue;
+    background-color:red;
     color: aqua;
     margin: 15px;
     font-size: 1.5rem;
+}
+#counter{
+    color: red;
 }
 #section{
     font-size: 1.3rem;
