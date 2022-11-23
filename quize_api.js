@@ -49,7 +49,7 @@ function reduce_screensize(){
 
 let questions = [];
 
-async function fetcher(){
+function fetcher(){
     container.style.display = 'none';
     loading.textContent = 'Loading...';
     fetch(`https://questions.aloc.com.ng/api/v2/q/40?subject=${current_subject}`, { 
@@ -131,7 +131,7 @@ inputs.forEach(input=>{
 function tester(){
     //CHECK ANSWER THE CHOOSEN QUESTION IF IT HAS BEEN ANSWERED
     inputs.forEach(input=>{
-        if(input.value === questions[currentquestion].choosen){
+        if(input.value[0].toLowerCase() === questions[currentquestion].choosen){
             input.checked = true;
         }
     });
@@ -185,8 +185,8 @@ back.addEventListener('click',()=>{
     currentquestion--;
     loadquestion();
     tester();
-    const checkboxes = checkbox_container.querySelectorAll('input')
-    checkboxes[currentquestion].checked = true
+    const checkboxes = checkbox_container.querySelectorAll('input');
+    checkboxes[currentquestion].checked = true;
 });
 
 const submit = ()=>{
