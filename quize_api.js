@@ -100,7 +100,7 @@ let answered_questions = 0;
 function select_any(){
     questions.forEach((question,i)=>{
         const span = document.createElement('span');
-        span.innerHTML = `${i+1}<input type="radio" name="q" value=${i}>`
+        span.innerHTML = `${i+1}<input class='nav_span' type="radio" name="q" value=${i}>`
         checkbox_container.appendChild(span);
     })
 }
@@ -243,7 +243,7 @@ function corrections(){
         p.innerHTML =
     `<article>
         <div>Question ${i+1} of ${questions.length}</div>
-      <hr>  <div>${question.question}</div><hr class="hr1" >
+    <hr><div>${question.question}</div><hr class="hr1" >
         <div>A. ${question.option.a}</div>
         <div>B. ${question.option.b}</div>
         <div>C. ${question.option.c}</div>

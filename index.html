@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="quize_api.css">
         <title>Past questions and answers </title>
     </head>
 <body>
     <nav id="nav">
-          <div class="subject"><button value="mathematics">Mathematics</button></div>
-          <div class="subject"><button value="english">English</button></div>
-          <div class="subject others">
+        <div class="subject"><button value="english">English</button></div>
+        <div class="subject maths"><button value="mathematics">Mathematics</button></div>
+           <div class="subject others">
             <strong id="other_subjects_btn" >Other Subjects ▼</strong>
             <div id="other_subjects" class="other_subjects" >
+                <div class="subject"><button value="mathematics">Mathematics</button></div>
                 <div><button value="physics">Physics</button></div>
                 <div><button value="chemistry">Chemistry</button></div>
                 <div><button value="biology">Biology</button></div>
@@ -27,7 +28,7 @@
 
     </nav>
     <article class="welcome_article">
-       <h1> Welcome MariaDevs Past questions and answer platform</h1>
+       <h3> Welcome MariaDevs Past questions and answer platform</h3>
        <p>Choose a subject and click <strong class="instruction_start">"START"</strong> to continue. You can message from <a href="https://t.me/LeCdeK">here</a> for suggestions and reviews</p> 
     </article>
         <div class="guide" >
@@ -44,32 +45,30 @@
         <div id="section"></div>
         <div id="question"></div>
         
-        <div class="option a" >
+        <div class="option" >
             <input type="radio" id="input_a" name="s">
-            <label id="a" for="input_a"></label>
+            <label class="label" id="a" for="input_a"></label>
         </div>
-        <div class="option a" >
+        <div class="option" >
             <input type="radio" id="input_b" name="s">
-            <label id="b" for="input_b"></label>
+            <label class="label" id="b" for="input_b"></label>
         </div>
-        <div class="option a" >
+        <div class="option" >
             <input type="radio" id="input_c" name="s">
-            <label id="c" for="input_c"></label>
+            <label class="label" id="c" for="input_c"></label>
         </div>
-        <div class="option a">
+        <div class="option">
             <input type="radio" id="input_d" name="s">
-            <label id="d" for="input_d"></label>
+            <label class="label" id="d" for="input_d"></label>
         </div>
         <!-- <div class="option a">
             <input type="radio" id="input_e" name="s">
             <label id="e" for="input_e"></label>
         </div> this api repeats option d in option e--> 
-        <div id="nav-btns" >
-            
+        <div id="nav_btns" >
             <button id="back">←Previous</button>
             <button id="submitter">submit</button>
             <button id="next">next→</button>
-            
         </div>
     </div>
     <div id="checkbox_container" ><!--<span>1<input type="radio" name="q" value="0"></span> <span> 2<input  type="radio" name="q" value="1"></span> <span> 3<input  type="radio" name="q" value="2"></span> <span>4<input  type="radio" name="q" value="3"></span>  --></div>

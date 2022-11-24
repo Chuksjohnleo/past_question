@@ -1,13 +1,19 @@
 body{
     background-color: rgb(230, 228, 228);
-    display: flex;
-    flex-direction: column;
     margin: 0px;
-    gap: 14px;
 }
-@media screen and (min-width:981px){
+@media screen and (min-width:500px){
     body{
-        gap: 2px;
+        overflow-x: hidden;
+    }
+}
+/* NAV */
+.maths{
+    display: none;
+}
+@media screen and (min-width:500px){
+    .maths{
+        display: inline-block;
     }
 }
 nav{
@@ -17,15 +23,12 @@ nav{
     align-items: center;
     background-color: beige;
     color: blue;
-    height: 100px;
+    height: 70px;
+    width: 100vw;
     cursor: pointer;
-    font-size: xx-large;
     box-shadow: 3px 4px 5px inset,3px -4px 5px inset;
     /* position: sticky;
     top: 0px; */
-}
-#counter{
-    font-size: xx-large;
 }
 .other_subjects{
     display: none;
@@ -39,199 +42,11 @@ nav{
     z-index: 2;
     box-shadow: -3px 3px 3px inset black,3px 3px 3px inset black;
 }
-.flex{
-    display: flex;
-}
-
-
 nav button{
-    font-size:xx-large;
+    font-size: 1rem;
 }
-.instructions{
-    font-size: 1.8rem;
-}
-main{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(221, 241, 241);
-    border-radius: 30px;
-    justify-content: center;
-    margin-bottom: 100px;
-}
-@media screen and (max-width:250) {
-    main{
-        overflow: scroll;
-    }
-}
-.container{
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    justify-content: center;
-    gap: 50px;
-}
-#checkbox_container{
-    display: grid;
-    margin:2px 40px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr  1fr ;
-}
-#question{
-    color: blue;
-    background-color: rgb(234, 229, 240);
-    text-align: center;
-    font-size: 1.6rem;
-}
-#number{
-    color: red;
-    background-color: rgb(98, 0, 255);
-    text-align: center;
-    font-size: 4rem;
-}
-.option{
-    font-size: 2rem;
-    color: rgb(7, 11, 253);
-    background-color: rgb(9, 247, 108);
-    border: 3px solid blue;
-}
-.guide{
-    text-align: center;
-    background-color: aquamarine;
-    margin: 2em;
-    padding: 2em;
-    border: 1px solid turquoise;
-    border-radius: 30px;
-    box-shadow: 20px 20px 40px yellow inset;
-    color: blue;
-}
-#nav-btns{
-    display: flex;
-    justify-content: space-evenly;
-    margin: 1.2em;
-    gap: 70px;
-}
-#submitter{
-    
-    background-color: blue;
-    color: white;
-    border-radius: 2px;
 
-}
-#next{
-    background-color: yellow;
-
-}
-label{
-    min-width: 200px;
-    display: inline-block;
-}
-#back{
-    background-color: red;
-}
-.option:hover{
-    background: red;
-}
-span{
-    background-color:red;
-    color: aqua;
-    margin: 15px;
-    font-size: 1.5rem;
-}
-#counter{
-    color: red;
-}
-#section{
-    font-size: 1.3rem;
-}
-article{
-    background-color: blue;
-    padding: 50px;
-    font-size: larger;
-    color: aqua;
-    width: 60vw;
-}
-.correct_answer{
-    color: white;
-}
-.choosen{
-    color: yellow;
-}
-.result_btns{
-    background-color: aqua;
-    color:blue;
-    border: 2px solid yellow;
-}
-.hr1{
-    width: 100px;
-    
-}
-.reduce_gap{
-    gap: 2px;
-}
-.wrong{
-    color: red;
-    font-size: 1.5em;
-}
-.correct{
-    color: rgb(250, 8, 230);
-    font-size: 1.5em;
-}
-.reduce_btn{
-    background-color: blue;
-    color: white;
-    margin: 1.3em;
-}
-.tele{
-    border-radius: 5px;
-    margin: auto 25px;
-}
-button{
-    font-size: 2rem;
-}
-button:hover{
-    background-color: red;
-}
-.tele_link{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    height: 450px;
-    text-align: center;
-    background-color: aquamarine;
-    margin: 2em;
-    font-size: 3rem;
-    padding: 40px;
-    border-radius: 30px;
-    
-    box-shadow: 10px 30px 40px yellow inset,-10px -30px 40px red inset;
-}
-.instruction_start{
-    color: rgb(252, 248, 248);
-}
-footer{
-    position: sticky;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background: rgb(29, 28, 27);
-    height: 1000px;
-}
-#start{
-    margin: 15px;
-    background-color: blueviolet;
-    color: white;
-}
-#loading{
-    text-align: center;
-    font-size: xx-large;
-    color: blue;
-}
-.score{
-    font-size: x-large;
-}
+/* WELCOME ARTICLE */
 .welcome_article{
     display: flex;
     align-self:center;
@@ -241,6 +56,185 @@ footer{
     align-content: center;
     flex-direction: column;
 }
+.instruction_start{
+    color: rgb(252, 248, 248);
+}
 .welcome_article a{
     color: white;
 }
+/* GUIDE */
+.guide{
+    text-align: center;
+    background-color: aquamarine;
+    padding: 2em;
+    margin-bottom: 2em;
+    border: 1px solid turquoise;
+    border-radius: 30px;
+    box-shadow: 20px 20px 40px yellow inset;
+    color: blue;
+}
+
+#counter{
+    font-size: xx-large;
+        color: red;
+}
+#start{
+    margin-top: 15px;
+    background-color: blueviolet;
+    color: white;
+}
+/* JS MANIPULATION */
+.flex{
+    display: flex;
+}
+.reduce_gap{
+    gap: 2px;
+}
+
+/* MAIN */
+main{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(233, 221, 241);
+    border-radius: 30px;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+@media screen and (max-width:250px) {
+    main{
+        overflow: scroll;
+    }
+}
+.reduce_btn{
+    background-color: blue;
+    color: white;
+}
+#loading{
+    text-align: center;
+    color: blue;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 2px;
+    justify-content: center;
+}
+#number{
+    color: red;
+    background-color: rgb(98, 0, 255);
+    text-align: center;
+}
+#section{
+    color: green;
+}
+#question{
+    color: blue;
+    background-color: rgb(234, 229, 240);
+    text-align: center;
+}
+.option{
+    color: rgb(7, 11, 253);
+    background-color: rgb(9, 247, 108);
+    border: 3px solid blue;
+}
+.label{
+    display: inline-block;
+}
+@media screen and (min-width:700px){
+    .option:hover{
+        background: red;
+    }
+}
+
+ /* NAVIGATION i.e PREVIOUS, SUBMIT, NEXT */
+ #nav_btns{
+    display: flex;
+    margin: 1.2em;
+}
+#back{
+    background-color: red;
+}
+#submitter{
+    background-color: blue;
+    color: white;
+    border-radius: 2px;
+}
+#next{
+    background-color: yellow;
+}
+/* THE CHECKBOXES THAT INDICATION ANSWERED & CURRENT QUESTIONS */
+#checkbox_container{
+    display: grid;
+    margin:2px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr  1fr ;
+}
+span{
+    background-color:red;
+    color: aqua;
+    font-size: 1.5rem;
+}
+
+/* TELEGRAM LINK */
+.tele_link{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 200px;
+    text-align: center;
+    background-color: aquamarine;
+    font-size: 3rem;
+    border-radius: 30px;
+    box-shadow: 10px 30px 40px yellow inset,-10px -30px 40px red inset;
+}
+.tele{
+    border-radius: 5px;
+    margin: auto 25px;
+}
+/* ALL ARTICLES */
+article{
+    background-color: blue;
+    padding: 50px;
+    font-size: larger;
+    color: aqua;
+    margin: 2em 0px;
+}
+/* SUBMIT */
+.score{
+    font-size: x-large;
+}
+.result_btns{
+    background-color: aqua;
+    color:blue;
+    border: 2px solid yellow;
+}
+/* CORRECTIONS */
+.result{
+    text-align: center;
+}
+.correct_answer{
+    color: white;
+}
+.choosen{
+    color: yellow;
+}
+
+/* ALL BUTTONS */
+button:hover{
+    background-color: red;
+}
+
+/* FOOTER */
+footer{
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: rgb(29, 28, 27);
+    margin-top:2em;
+}
+
