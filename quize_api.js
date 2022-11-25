@@ -22,10 +22,16 @@ const counter = document.getElementById('counter');
 const section = document.getElementById('section');
 const other_subjects_btn = document.getElementById('other_subjects_btn');
 const other_subjects = document.getElementById('other_subjects');
+const cancel = document.getElementById('cancel');
+const img = document.getElementById('img');
 
-other_subjects_btn.addEventListener('click',()=>{
+
+
+const others = ()=>{
     other_subjects.classList.toggle('flex');
-});
+}
+cancel.onclick = ()=>others();
+other_subjects_btn.addEventListener('click',others);
 starter.style.display = 'none';
 let count = 0;
 
@@ -39,6 +45,7 @@ subjects.forEach(subject=>{
     subject.style.background = 'blue';
     subject.style.color = 'white';
     nav.innerHTML = `${subject.value.toUpperCase()}`
+    nav.style.position = 'sticky';
    });
 });
 
@@ -50,11 +57,10 @@ function reduce_screensize(){
 let questions = [];
 let timeout = '';
 let interval = '';
-
-function fetcher(){
+ function fetcher(){
     container.style.display = 'none';
     loading.textContent = 'Loading...';
-    fetch(`https://questions.aloc.com.ng/api/v2/q/40?subject=${current_subject}`, { 
+ fetch(`https://questions.aloc.com.ng/api/v2/q/40?subject=${current_subject}`, { 
         headers: {
          'Accept': 'application/json',
          'Content-Type': 'application/json', 
@@ -62,12 +68,30 @@ function fetcher(){
         }, 
         method: "GET", 
       }).then((res)=>{return res.json() }).then(resp=>{
-        if(resp){
-            container.style.display = '';
-            loading.textContent = '';
-        }
-        questions = resp.data;
-        
+if(resp){
+    container.style.display = 'none';
+    loading.textContent = 'Loading...';
+    questions = resp.data;
+    if(current_subject === 'english'){
+       fetch(`https://questions.aloc.com.ng/api/v2/q/20?subject=${current_subject}`, { 
+        headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json', 
+         'AccessToken': 'ALOC-6c87ee0af59ce539e6df' 
+        }, 
+        method: "GET", 
+      }).then((res)=>{return res.json() }).then(response=>{
+        if(response){
+        questions = resp.data.concat(response.data);
+        select_any();
+        loadquestion();
+         }
+      })
+    }
+    container.style.display = '';
+    loading.textContent = '';
+}
+
         questions.forEach(question=>{
             question.choosen = '';
             question.result = '';
@@ -91,7 +115,8 @@ function fetcher(){
                   tester();  
             })
           });
-        }).catch((err)=>{ console.log(err) })
+        }).catch((err)=>{ /*console.log(err)*/ })
+        
 }
 
 let correct = 0;
@@ -107,6 +132,10 @@ function select_any(){
 
 
 function loadquestion(){
+    if(questions[currentquestion].image){
+        img.src = questions[currentquestion].image;
+        console.log(img.height)
+    }
 section.innerHTML = questions[currentquestion].section;
 question.innerHTML  = questions[currentquestion].question;
 number.innerHTML = `Question ${currentquestion+1} of ${questions.length}`;
@@ -243,7 +272,9 @@ function corrections(){
         p.innerHTML =
     `<article>
         <div>Question ${i+1} of ${questions.length}</div>
-    <hr><div>${question.question}</div><hr class="hr1" >
+    <hr><div>${question.section}</div>
+        <div><img src=${question.image}></div>
+        <div>${question.question}</div><hr class="hr1" >
         <div>A. ${question.option.a}</div>
         <div>B. ${question.option.b}</div>
         <div>C. ${question.option.c}</div>

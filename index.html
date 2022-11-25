@@ -6,12 +6,14 @@
         <title>Past questions and answers </title>
     </head>
 <body>
+    <header><div class="header"></div></header>
     <nav id="nav">
         <div class="subject"><button value="english">English</button></div>
         <div class="subject maths"><button value="mathematics">Mathematics</button></div>
            <div class="subject others">
-            <strong id="other_subjects_btn" >Other Subjects ▼</strong>
+            <em id="other_subjects_btn" >Other Subjects ▼</em>
             <div id="other_subjects" class="other_subjects" >
+                <div id="cancel">❌ Cancel</div>
                 <div class="subject"><button value="mathematics">Mathematics</button></div>
                 <div><button value="physics">Physics</button></div>
                 <div><button value="chemistry">Chemistry</button></div>
@@ -32,8 +34,8 @@
        <p>Choose a subject and click <strong class="instruction_start">"START"</strong> to continue. You can message from <a href="https://t.me/LeCdeK">here</a> for suggestions and reviews</p> 
     </article>
         <div class="guide" >
-            <h1>Answer all</h1>
-            <div class="instructions" ><em>Instructions:</em>Click SUBMIT only when you are done answering all the questions. You have 40mins to answer all the qusetions</div>
+            <h3>Answer all</h3>
+            <div class="instructions" ><em>Instructions:</em><br>Click SUBMIT only when you are done answering all the questions. You have 40mins to answer all the questions</div>
             <div id="counter"></div>
             <div><button onclick="start()" id="start" >START!</button></div>
         </div>
@@ -43,6 +45,7 @@
     <div id="container" class="container" >
         <div id="number"></div>
         <div id="section"></div>
+        <div id="div_img"><img id="img"></div>
         <div id="question"></div>
         
         <div class="option" >

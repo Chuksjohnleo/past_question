@@ -1,6 +1,13 @@
 body{
     background-color: rgb(230, 228, 228);
-    margin: 0px;
+    margin: 0px ;
+}
+
+.header{
+    height: 10px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: aqua;
 }
 @media screen and (min-width:500px){
     body{
@@ -21,14 +28,14 @@ nav{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: beige;
+    background-color: white;
     color: blue;
     height: 70px;
-    width: 100vw;
+    width: 100%;
     cursor: pointer;
-    box-shadow: 3px 4px 5px inset,3px -4px 5px inset;
-    /* position: sticky;
-    top: 0px; */
+    box-shadow: 3px 4px 5px ,3px -4px 5px ;
+    top: 0px;
+    margin: 0px;
 }
 .other_subjects{
     display: none;
@@ -37,7 +44,8 @@ nav{
     align-items: center;
     gap: 20px;
     position: absolute;
-    padding: 20px;
+    right: 8px;
+    padding: 2px;
     background-color: beige;
     z-index: 2;
     box-shadow: -3px 3px 3px inset black,3px 3px 3px inset black;
@@ -45,6 +53,16 @@ nav{
 nav button{
     font-size: 1rem;
 }
+@media  screen and (max-width:300px) {
+    #cancel{
+        font-size: 0.5rem;
+        width: 100%;
+    }
+    .other_subjects{
+        right: 10px;
+    }
+}
+
 
 /* WELCOME ARTICLE */
 .welcome_article{
@@ -57,20 +75,20 @@ nav button{
     flex-direction: column;
 }
 .instruction_start{
-    color: rgb(252, 248, 248);
+    color: blue;
 }
 .welcome_article a{
-    color: white;
+    color: blue;
 }
 /* GUIDE */
 .guide{
     text-align: center;
-    background-color: aquamarine;
+    background-color: white;
     padding: 2em;
     margin-bottom: 2em;
-    border: 1px solid turquoise;
+    border: 1px solid blue;
     border-radius: 30px;
-    box-shadow: 20px 20px 40px yellow inset;
+    box-shadow: 2px 2px 4px blue ;
     color: blue;
 }
 
@@ -80,7 +98,7 @@ nav button{
 }
 #start{
     margin-top: 15px;
-    background-color: blueviolet;
+    background-color: blue;
     color: white;
 }
 /* JS MANIPULATION */
@@ -118,7 +136,7 @@ main{
 .container{
     display: flex;
     flex-direction: column;
-    margin: 2px;
+    margin: 2px 15px;
     justify-content: center;
 }
 #number{
@@ -129,6 +147,11 @@ main{
 #section{
     color: green;
 }
+#div_img{
+    align-self: center;
+    justify-self: center;
+}
+
 #question{
     color: blue;
     background-color: rgb(234, 229, 240);
@@ -142,6 +165,9 @@ main{
 .label{
     display: inline-block;
 }
+.option:active{
+    background-color: red;
+}
 @media screen and (min-width:700px){
     .option:hover{
         background: red;
@@ -151,6 +177,7 @@ main{
  /* NAVIGATION i.e PREVIOUS, SUBMIT, NEXT */
  #nav_btns{
     display: flex;
+    justify-content: space-around;
     margin: 1.2em;
 }
 #back{
@@ -167,13 +194,19 @@ main{
 /* THE CHECKBOXES THAT INDICATION ANSWERED & CURRENT QUESTIONS */
 #checkbox_container{
     display: grid;
-    margin:2px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr  1fr ;
+    margin:2px 4px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+@media screen and (min-width:800px){
+    #checkbox_container{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  1fr 1fr 1fr 1fr 1fr;
+    }
 }
 span{
     background-color:red;
     color: aqua;
     font-size: 1.5rem;
+    border: 2px solid white;
 }
 
 /* TELEGRAM LINK */
@@ -184,21 +217,22 @@ span{
     justify-content: center;
     height: 200px;
     text-align: center;
-    background-color: aquamarine;
+    background-color: white;
     font-size: 3rem;
     border-radius: 30px;
-    box-shadow: 10px 30px 40px yellow inset,-10px -30px 40px red inset;
+    box-shadow: 1px 3px 4px black,-1px -3px 4px black;
+    color: blue;
 }
 .tele{
     border-radius: 5px;
+    background-color: white;
     margin: auto 25px;
+    color: blue;
 }
 /* ALL ARTICLES */
 article{
-    background-color: blue;
+    background-color: white;
     padding: 50px;
-    font-size: larger;
-    color: aqua;
     margin: 2em 0px;
 }
 /* SUBMIT */
@@ -237,4 +271,3 @@ footer{
     background: rgb(29, 28, 27);
     margin-top:2em;
 }
-
