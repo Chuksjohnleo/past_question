@@ -94,7 +94,8 @@ nav button{
 
 #counter{
     font-size: xx-large;
-        color: red;
+    color: red;
+    display: none;
 }
 #start{
     margin-top: 15px;
@@ -238,6 +239,8 @@ article{
 /* SUBMIT */
 .score{
     font-size: x-large;
+    background-color: blue;
+    color: white;
 }
 .result_btns{
     background-color: aqua;

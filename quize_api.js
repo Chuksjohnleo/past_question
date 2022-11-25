@@ -58,46 +58,16 @@ let questions = [];
 let timeout = '';
 let interval = '';
  function fetcher(){
-    container.style.display = 'none';
-    loading.textContent = 'Loading...';
- fetch(`https://questions.aloc.com.ng/api/v2/q/40?subject=${current_subject}`, { 
-        headers: {
-         'Accept': 'application/json',
-         'Content-Type': 'application/json', 
-         'AccessToken': 'ALOC-6c87ee0af59ce539e6df' 
-        }, 
-        method: "GET", 
-      }).then((res)=>{return res.json() }).then(resp=>{
-if(resp){
-    container.style.display = 'none';
-    loading.textContent = 'Loading...';
-    questions = resp.data;
-    if(current_subject === 'english'){
-       fetch(`https://questions.aloc.com.ng/api/v2/q/20?subject=${current_subject}`, { 
-        headers: {
-         'Accept': 'application/json',
-         'Content-Type': 'application/json', 
-         'AccessToken': 'ALOC-6c87ee0af59ce539e6df' 
-        }, 
-        method: "GET", 
-      }).then((res)=>{return res.json() }).then(response=>{
-        if(response){
-        questions = resp.data.concat(response.data);
-        select_any();
-        loadquestion();
-         }
-      })
-    }
-    container.style.display = '';
-    loading.textContent = '';
-}
-
+    function organise_questions(){
+        counter.style.display = 'block';
+        counter.innerHTML = '0 minute spent';
+        container.style.display = '';
+        loading.textContent = '';
         questions.forEach(question=>{
             question.choosen = '';
             question.result = '';
         });
-         loadquestion();
-         select_any();
+        loadquestion();
          const checkboxes = checkbox_container.querySelectorAll('input');
          checkboxes[currentquestion].checked = true;
     
@@ -115,8 +85,45 @@ if(resp){
                   tester();  
             })
           });
-        }).catch((err)=>{ /*console.log(err)*/ })
-        
+    }
+    container.style.display = 'none';
+    loading.textContent = 'Loading...';
+ fetch(`https://questions.aloc.com.ng/api/v2/q/40?subject=${current_subject}`, { 
+        headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json', 
+         'AccessToken': 'ALOC-6c87ee0af59ce539e6df' 
+        }, 
+        method: "GET", 
+      }).then((res)=>{return res.json() }).then(resp=>{
+if(resp){
+    container.style.display = 'none';
+    loading.textContent = 'Loading...';
+    questions = resp.data;
+    if(current_subject === 'english'){
+        container.style.display = 'none';
+        loading.textContent = 'Loading...';
+       fetch(`https://questions.aloc.com.ng/api/v2/q/20?subject=${current_subject}`, { 
+        headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json', 
+         'AccessToken': 'ALOC-6c87ee0af59ce539e6df' 
+        }, 
+        method: "GET", 
+      }).then((res)=>{return res.json() }).then(response=>{
+        if(response){
+        questions = resp.data.concat(response.data);
+        loadquestion();
+        select_any();
+        organise_questions();
+         }
+      })
+    }else{
+        select_any();
+        organise_questions();
+    }
+   }
+ }).catch((err)=>{ counter.innerHTML = err.message })  
 }
 
 let correct = 0;
@@ -134,7 +141,6 @@ function select_any(){
 function loadquestion(){
     if(questions[currentquestion].image){
         img.src = questions[currentquestion].image;
-        console.log(img.height)
     }
 section.innerHTML = questions[currentquestion].section;
 question.innerHTML  = questions[currentquestion].question;
@@ -157,7 +163,6 @@ input_d.value = 'D. ' + questions[currentquestion].option.d;
 let inputs = container.querySelectorAll('input');
 inputs.forEach(input=>{
     input.addEventListener('click',()=>{
-        console.log(input.value[0])
         questions[currentquestion].choosen = input.value[0].toLowerCase() ;
         //indicate answered questions
         const sp = checkbox_container.querySelectorAll('span');
@@ -226,10 +231,8 @@ back.addEventListener('click',()=>{
 });
 
 const submit = ()=>{
-    console.log(timeout,interval)
     clearTimeout(timeout);
     clearInterval(interval);
-    console.log(timeout,interval)
     checkbox_container.remove();
     questions.forEach(question=>{
         
