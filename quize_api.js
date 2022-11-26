@@ -24,6 +24,7 @@ const other_subjects_btn = document.getElementById('other_subjects_btn');
 const other_subjects = document.getElementById('other_subjects');
 const cancel = document.getElementById('cancel');
 const img = document.getElementById('img');
+const spinner = document.getElementById('spinner')
 
 
 
@@ -59,6 +60,7 @@ let timeout = '';
 let interval = '';
  function fetcher(){
     function organise_questions(){
+        spinner.style.display = 'none';
         counter.style.display = 'block';
         counter.innerHTML = '0 minute spent';
         container.style.display = '';

@@ -2,6 +2,11 @@ body{
     background-color: rgb(230, 228, 228);
     margin: 0px ;
 }
+@media screen and (max-width:200px){
+    body{
+        overflow-x: scroll;
+    }
+}
 
 .header{
     height: 10px;
@@ -36,6 +41,7 @@ nav{
     box-shadow: 3px 4px 5px ,3px -4px 5px ;
     top: 0px;
     margin: 0px;
+    z-index: 2;
 }
 .other_subjects{
     display: none;
@@ -133,7 +139,26 @@ main{
     text-align: center;
     color: blue;
 }
-
+#spinner{
+    border: 15px solid  rgb(230, 228, 228);
+    height: 40px;
+    width: 1px;
+    border-radius: 50%;
+    border-top: 5px solid blue;
+    border-bottom:  15px solid blue;
+    justify-self: center;
+    align-self: center;
+   animation: spinner 2s linear 0s infinite;
+   background-color: blue;
+}
+@keyframes spinner{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 .container{
     display: flex;
     flex-direction: column;
@@ -160,7 +185,6 @@ main{
 }
 .option{
     color: rgb(7, 11, 253);
-    background-color: rgb(9, 247, 108);
     border: 3px solid blue;
 }
 .label{
@@ -243,9 +267,9 @@ article{
     color: white;
 }
 .result_btns{
-    background-color: aqua;
+    background-color: white;
     color:blue;
-    border: 2px solid yellow;
+    border: 2px solid blue;
 }
 /* CORRECTIONS */
 .result{
