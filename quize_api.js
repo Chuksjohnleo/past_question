@@ -59,6 +59,7 @@ let questions = [];
 let timeout = '';
 let interval = '';
  function fetcher(){
+    spinner.style.display = '';
     function organise_questions(){
         spinner.style.display = 'none';
         counter.style.display = 'block';
@@ -89,7 +90,7 @@ let interval = '';
           });
     }
     container.style.display = 'none';
-    loading.textContent = 'Loading...';
+    loading.textContent = 'Loading questions...';
  fetch(`https://questions.aloc.com.ng/api/v2/q/40?subject=${current_subject}`, { 
         headers: {
          'Accept': 'application/json',
@@ -125,7 +126,10 @@ if(resp){
         organise_questions();
     }
    }
- }).catch((err)=>{ counter.innerHTML = err.message })  
+ }).catch((err)=>{
+     loading.innerHTML = err.message+': check your internet connection and <button onclick="fetcher()">Try again</button>';
+     spinner.style.display = 'none';
+     console.log(err.message) })  
 }
 
 let correct = 0;
@@ -141,7 +145,9 @@ function select_any(){
 
 
 function loadquestion(){
-    if(questions[currentquestion].image){
+    img.style.display = 'none'
+    if(questions[currentquestion].image !== ""){
+        img.style.display = '';
         img.src = questions[currentquestion].image;
     }
 section.innerHTML = questions[currentquestion].section;
@@ -278,7 +284,7 @@ function corrections(){
     `<article>
         <div>Question ${i+1} of ${questions.length}</div>
     <hr><div>${question.section}</div>
-        <div><img src=${question.image}></div>
+        <div><img class='corrections_images' src=${question.image}></div>
         <div>${question.question}</div><hr class="hr1" >
         <div>A. ${question.option.a}</div>
         <div>B. ${question.option.b}</div>
