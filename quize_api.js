@@ -24,7 +24,10 @@ const other_subjects_btn = document.getElementById('other_subjects_btn');
 const other_subjects = document.getElementById('other_subjects');
 const cancel = document.getElementById('cancel');
 const img = document.getElementById('img');
-const spinner = document.getElementById('spinner')
+const spinner = document.getElementById('spinner');
+const h1 =  document.getElementsByTagName('h1')[0];
+const to_top =  document.getElementsByClassName('to_top')[0];
+
 
 
 
@@ -58,9 +61,13 @@ function reduce_screensize(){
 let questions = [];
 let timeout = '';
 let interval = '';
+const to_top_remove = setInterval(()=>{
+    to_top.style.display = 'none'
+},3000)
  function fetcher(){
     spinner.style.display = '';
     function organise_questions(){
+        
         spinner.style.display = 'none';
         counter.style.display = 'block';
         counter.innerHTML = '0 minute spent';
@@ -298,8 +305,6 @@ function corrections(){
         main.appendChild(p);//append the questions to the dom now with corrctions
     });
 };
-const h1 =  document.getElementsByTagName('h1')[0];
-const to_top =  document.getElementsByClassName('to_top')[0];
 function topY(){
     h1.scrollIntoView();
     to_top.style.display = 'none';
