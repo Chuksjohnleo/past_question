@@ -298,3 +298,16 @@ function corrections(){
         main.appendChild(p);//append the questions to the dom now with corrctions
     });
 };
+const h1 =  document.getElementsByTagName('h1')[0];
+const to_top =  document.getElementsByClassName('to_top')[0];
+function topY(){
+    h1.scrollIntoView();
+    to_top.style.display = 'none';
+}
+window.onscroll = ()=>{
+    if(window.scrollY > 200){
+        to_top.style.display = 'block';
+    }else{
+        to_top.style.display = 'none';
+    }
+}

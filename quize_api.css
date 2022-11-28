@@ -51,13 +51,16 @@ nav{
     gap: 20px;
     position: absolute;
     right: 8px;
-    padding: 2px;
+    padding: 8px;
     background-color: beige;
     z-index: 2;
     box-shadow: -3px 3px 3px inset black,3px 3px 3px inset black;
 }
+
 nav button{
+    border-radius: 20px;
     font-size: 1rem;
+    border-width: 0px;
 }
 @media  screen and (max-width:300px) {
     #cancel{
@@ -68,7 +71,13 @@ nav button{
         right: 10px;
     }
 }
-
+.to_top{
+    position: fixed;
+    top: 200px;
+    right: 0px;
+    display: none;
+    font-size: xx-large;
+}
 
 /* WELCOME ARTICLE */
 .welcome_article{
@@ -304,8 +313,9 @@ footer{
     justify-content: center;
     align-items: center;
     color: white;
-    background: rgb(29, 28, 27);
+    background: grey;
     margin-top:2em;
+    text-align: center;
 }
 footer img{
     width: 30px;
