@@ -92,8 +92,8 @@ nav button{
     background-color: white;
     padding: 2em;
     margin-bottom: 2em;
-    margin-right: 8px;
-    margin-left: 8px;
+    margin-right: 10px;
+    margin-left: 10px;
     border: 1px solid blue;
     border-radius: 30px;
     box-shadow: 2px 2px 4px blue ;
@@ -254,8 +254,8 @@ span{
     border-radius: 30px;
     box-shadow: 1px 3px 4px black,-1px -3px 4px black;
     color: blue;
-    margin-left: 8px;
-    margin-right: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .tele{
     border-radius: 5px;
@@ -306,4 +306,20 @@ footer{
     color: white;
     background: rgb(29, 28, 27);
     margin-top:2em;
+}
+footer img{
+    width: 30px;
+    height: 30px;
+}
+footer a{
+    margin: 5px;
+}
+@media screen and (min-width:700px){
+    footer img{
+        width: 50px;
+        height: 50px;
+    }
+    footer a{
+        margin: 20px;
+    }
 }
