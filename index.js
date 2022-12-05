@@ -27,6 +27,9 @@ const img = document.getElementById('img');
 const spinner = document.getElementById('spinner');
 const h1 =  document.getElementsByTagName('h1')[0];
 const to_top =  document.getElementsByClassName('to_top')[0];
+const flex_div = document.getElementsByClassName('flex_div')[0];
+flex_div.style.display = 'none';
+
 
 
 
@@ -274,16 +277,17 @@ submitter.addEventListener("click",submit);
 //restart
 function restart(){
     location.reload();
-    start();
 }
 //start quiz
 function start(){
     main.style.display = 'flex';//displays the questions
     fetcher();//fetches the questions
-    document.getElementById('start').style.display = 'none'
+    document.getElementById('start').style.display = 'none';
+    flex_div.style.display = '';
 }
 //show corrections
 function corrections(){
+    document.getElementsByClassName('reduce_btn')[0].remove();
     document.getElementById('corrections').remove();
     questions.forEach((question,i)=>{
        let p = document.createElement('p');

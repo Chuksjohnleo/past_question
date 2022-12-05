@@ -1,0 +1,107 @@
+#ip{
+      text-align: right;
+    }
+    #ip::placeholder{
+      text-align: right;
+    }
+#ip2{   width: 70%;
+        border-color:transparent ;
+    }
+.ip1{
+        width:70%;
+        border-color:transparent ;
+    }
+.screen{
+        border: 1px solid transparent;
+        transform: translateY(-15px);
+    }
+.calculator_input{
+    color: white;
+    font-weight: 400;
+}
+    h2{
+        text-align:center;
+    }
+    h3{
+        text-align:center ;
+        color:Blue;
+    }
+    strong{
+        color:white;
+        margin:10px 30px;
+    }
+    .clear{
+        color:red;
+        background-color:black ;
+        border-radius:7px;
+    }
+    .del{
+        background-color:red;
+        border-radius:7px;
+    }
+.red{
+      color: red;
+    }
+.buttoncontainer{
+             background-color: aqua;
+             display: grid;
+             grid-template-columns:1fr 1fr 1fr 1fr;
+             gap: 10px;
+             padding: 5px;
+             border: 5px solid white;
+             border-radius: 20px;
+             margin: 0 10px;
+          }
+.bt{
+      color: white;
+      border-radius: 20px;
+      }
+
+.calc{
+       background-color: rgb(12, 158, 243);
+      }
+button:active{
+             background-color: blue;
+             color: white;
+             border-radius: 10px;
+   }
+ .calculator{   overflow: hidden;
+             display: none;
+             flex-direction: column;
+             background-color: grey;
+             border-radius: 20px;
+             margin: 5px 20px;
+          }
+
+          .eq{
+             background-color: yellow;
+             color: black;
+          }
+           .answ{
+               color:blue;
+               background-color:white;
+               border-radius:5px;
+           }
+.eqcont{
+        margin: 0;
+      }
+    
+    /* @media screen and (max-width:700px){
+         .calculator{
+            margin: 0 100px;
+         }
+      }  */
+   /* @media screen and (min-width:750px){
+      .calculator{
+         margin: 0 250px;
+      }
+   }
+   @media screen and (min-width:1100px){
+    .calculator{
+         margin: 0 400px;
+      }
+   } */
+   h3 a{
+      text-decoration: none;
+      color: white;
+   }

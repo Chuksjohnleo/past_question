@@ -1,0 +1,367 @@
+body{
+    background-color: rgb(230, 228, 228);
+    margin: 0px ;
+}
+@media screen and (max-width:200px){
+    body{
+        overflow-x: scroll;
+    }
+}
+
+.header{
+    height: 10px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: aqua;
+}
+@media screen and (min-width:500px){
+    body{
+        overflow-x: hidden;
+    }
+}
+/* NAV */
+.maths{
+    display: none;
+}
+@media screen and (min-width:500px){
+    .maths{
+        display: inline-block;
+    }
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    color: blue;
+    height: 70px;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 3px 4px 5px ,3px -4px 5px ;
+    top: 0px;
+    margin: 0px;
+    z-index: 2;
+}
+.other_subjects{
+    display: none;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    right: 8px;
+    padding: 8px;
+    background-color: beige;
+    z-index: 2;
+    box-shadow: -3px 3px 3px inset black,3px 3px 3px inset black;
+}
+
+nav button{
+    border-radius: 20px;
+    font-size: 1rem;
+    border-width: 0px;
+}
+@media  screen and (max-width:300px) {
+    #cancel{
+        font-size: 0.5rem;
+        width: 100%;
+    }
+    .other_subjects{
+        right: 10px;
+    }
+}
+a{
+    text-decoration: none;
+}
+.to_top{
+    position: fixed;
+    top: 200px;
+    right: 0px;
+    display: none;
+    font-size: large;
+    z-index: 2;
+}
+.flex_div{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+.flex_div button{
+    font-size: large;
+    font-weight: 900;
+}
+.flex{
+    display: flex;
+}
+
+/* WELCOME ARTICLE */
+.welcome_article{
+    display: flex;
+    align-self:center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+.instruction_start{
+    color: blue;
+}
+.welcome_article a{
+    color: blue;
+}
+/* GUIDE */
+.guide{
+    text-align: center;
+    background-color: white;
+    padding: 2em;
+    margin-bottom: 2em;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: 1px solid blue;
+    border-radius: 30px;
+    box-shadow: 2px 2px 4px blue ;
+    color: blue;
+}
+
+#counter{
+    font-size: xx-large;
+    color: red;
+    display: none;
+}
+#start{
+    margin-top: 15px;
+    background-color: blue;
+    color: white;
+}
+/* JS MANIPULATION */
+.flex{
+    display: flex;
+}
+.reduce_gap{
+    gap: 2px;
+}
+
+/* MAIN */
+.main_div{
+    display: flex;
+    justify-content: center;
+}
+main{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(233, 221, 241);
+    border-radius: 30px;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+@media screen and (max-width:250px) {
+    main{
+        overflow: scroll;
+    }
+}
+.reduce_btn{
+    background-color: blue;
+    color: white;
+}
+#loading{
+    text-align: center;
+    color: blue;
+}
+#spinner{
+    border: 15px solid  rgb(230, 228, 228);
+    height: 40px;
+    width: 1px;
+    border-radius: 50%;
+    border-top: 5px solid blue;
+    border-bottom:  15px solid blue;
+    justify-self: center;
+    align-self: center;
+   animation: spinner 0.5s linear 0s infinite;
+   background-color: blue;
+}
+@keyframes spinner{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 2px 15px;
+    justify-content: center;
+}
+#number{
+    color: red;
+    background-color: rgb(98, 0, 255);
+    text-align: center;
+}
+#section{
+    color: green;
+}
+#div_img{
+    align-self: center;
+    justify-self: center;
+}
+#img{
+    max-width: 70vw;
+}
+.corrections_images{
+    max-width: 60vw;
+}
+#question{
+    color: blue;
+    background-color: rgb(234, 229, 240);
+    text-align: center;
+}
+.option{
+    color: rgb(7, 11, 253);
+    border: 3px solid blue;
+}
+.label{
+    display: inline-block;
+}
+.option:active{
+    background-color: red;
+}
+@media screen and (min-width:700px){
+    .option:hover{
+        background: red;
+    }
+}
+
+ /* NAVIGATION i.e PREVIOUS, SUBMIT, NEXT */
+ #nav_btns{
+    display: flex;
+    justify-content: space-around;
+    margin: 1.2em;
+}
+#back{
+    background-color: red;
+}
+#submitter{
+    background-color: blue;
+    color: white;
+    border-radius: 2px;
+}
+#next{
+    background-color: yellow;
+}
+/* THE CHECKBOXES THAT INDICATION ANSWERED & CURRENT QUESTIONS */
+#checkbox_container{
+    display: grid;
+    margin:2px 4px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+@media screen and (min-width:800px){
+    #checkbox_container{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  1fr 1fr 1fr 1fr 1fr;
+    }
+}
+span{
+    background-color:red;
+    color: aqua;
+    font-size: 1.5rem;
+    border: 2px solid white;
+}
+
+/* TELEGRAM LINK */
+.tele_link{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 200px;
+    text-align: center;
+    background-color: white;
+    font-size: 3rem;
+    border-radius: 30px;
+    box-shadow: 1px 3px 4px black,-1px -3px 4px black;
+    color: blue;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.tele{
+    border-radius: 5px;
+    background-color: white;
+    margin: auto 25px;
+    color: blue;
+}
+/* ALL ARTICLES */
+article{
+    background-color: white;
+    padding: 50px;
+    margin: 2em 0px;
+}
+/* SUBMIT */
+.score{
+    font-size: x-large;
+    background-color: blue;
+    color: white;
+}
+.result_btns{
+    background-color: white;
+    color:blue;
+    border: 2px solid blue;
+}
+/* CORRECTIONS */
+.result{
+    text-align: center;
+}
+.correct_answer{
+    color: white;
+}
+.choosen{
+    color: yellow;
+}
+
+/* ALL BUTTONS */
+button:hover{
+    color: white;
+    background-color: blue;
+}
+
+/* FOOTER */
+footer{
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: grey;
+    margin-top:2em;
+    text-align: center;
+}
+footer img{
+    width: 30px;
+    height: 30px;
+}
+footer a{
+    margin: 5px;
+}
+@media screen and (min-width:700px){
+    footer img{
+        width: 50px;
+        height: 50px;
+    }
+    footer a{
+        margin: 20px;
+    }
+}
+
+@media screen and (min-width:701px){
+    #exam.exam{
+        display: flex;
+        margin: auto 5px;
+        justify-content: space-around;
+    }
+    #checkbox_container{
+        grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
