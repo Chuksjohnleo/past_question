@@ -287,7 +287,6 @@ function start(){
 }
 //show corrections
 function corrections(){
-    document.getElementsByClassName('reduce_btn')[0].remove();
     document.getElementById('corrections').remove();
     questions.forEach((question,i)=>{
        let p = document.createElement('p');
