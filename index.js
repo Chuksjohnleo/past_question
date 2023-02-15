@@ -113,6 +113,7 @@ if(resp){
     container.style.display = 'none';
     loading.textContent = 'Loading...';
     questions = resp.data;
+    
     if(current_subject === 'english'){
         container.style.display = 'none';
         loading.textContent = 'Loading...';
@@ -139,7 +140,8 @@ if(resp){
  }).catch((err)=>{
      loading.innerHTML = err.message+': check your internet connection and <button onclick="fetcher()">Try again</button>';
      spinner.style.display = 'none';
-     console.log(err.message) })  
+     console.log(err.message) }) ;
+     return {a:organise_questions}
 }
 
 let correct = 0;
@@ -152,6 +154,7 @@ function select_any(){
         checkbox_container.appendChild(span);
     })
 }
+
 
 
 function loadquestion(){
