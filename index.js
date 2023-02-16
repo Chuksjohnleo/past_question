@@ -28,9 +28,12 @@ const spinner = document.getElementById('spinner');
 const h1 =  document.getElementsByTagName('h1')[0];
 const to_top =  document.getElementsByClassName('to_top')[0];
 const flex_div = document.getElementsByClassName('flex_div')[0];
+
 flex_div.style.display = 'none';
 
-
+const year = document.getElementById('year');
+let date = new Date();
+year.innerHTML = date.getFullYear();
 
 
 
